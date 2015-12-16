@@ -1,0 +1,64 @@
+* {
+	padding: 0;
+	margin: 0;
+	border-collapse: collapse;
+}
+
+body {
+	background-color: white;
+}
+
+#new-item {
+	font-size: 18px;
+	width: 500px;
+}
+
+.header {
+	text-align: center;
+	background-color: gray;
+	color: white;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	padding: 5px;
+}
+
+span {
+	padding: 20px; 
+}
+
+.footer {
+	height: 40px;
+	background-color: gray;
+}
+
+.list {
+	width: 350px;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: lightgray;	
+}
+
+#txtItem {
+	font-size: 18px;
+	width: 80%;
+	margin: 8px	;
+}
+
+#btnAdd {
+	width: 50px;
+	height: 30px;
+}
+
+.btnDel {
+	height: 25px;
+	float: right;
+}
+
+.chkDone {
+	margin: 10px;
+}
