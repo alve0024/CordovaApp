@@ -20,7 +20,6 @@ function loadGroceryList() {
 	if (typeof localStorage[key] !== "undefined") {
 	  	groceryItem = JSON.parse(localStorage[key]);
 	  	for(var i=0; i<groceryItem.length; i++) {
-	  		console.log(groceryItem[i]);
 	  		addGroceryItemToHTML(groceryItem[i]);
 	  	}	
 	  	addItemToList();
@@ -41,9 +40,9 @@ function itemDone() {
 	} else {
 	$(this).parent().css('textDecoration', 'line-through');
 	}
-	var idName = this.getAttribute('id');
-	groceryItem[idName].done = "checked";
-	localStorage[key] = JSON.stringify(groceryItem);
+	//var idName = this.getAttribute('id');
+	//groceryItem[idName].done = "checked";
+	//localStorage[key] = JSON.stringify(groceryItem);
 }
 
 function deleteItem() {
@@ -52,16 +51,17 @@ function deleteItem() {
   var idName = this.getAttribute('id');
 	groceryItem.splice(idName, 1);
 	localStorage[key] = JSON.stringify(groceryItem);
+	localStorage.push(key, JSON.stringify(groceryItem));
 }
 
-function addItemToList() {
+function addItemToList(ev) {
 	var item = $('#txtItem').val();
 	if (item !== "") {
 		$('#txtItem').val('');
 		var gritem = {};
 		gritem['idName'] = lastItem;
 		gritem['descr'] = item;
-		gritem['done'] = '';
+		gritem['done'] = 'false';
 		groceryItem.push(gritem);
 		localStorage[key] = JSON.stringify(groceryItem);
 		addGroceryItemToHTML(gritem);
